@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Books we have read</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="books-page">
+  <div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="join.html">Join</a>
+  <a href="books.html">Books</a>
+  <a href="locations.html">Locations</a>
+</div>
+  <div class="hamburger-menu">
+    <button class="hamburger">
+      <img src="images/borger.png" alt="Menu" class="hamburger-icon">
+    </button>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="join.html">Join</a>
+      <a href="books.html">Books</a>
+      <a href="locations.html">Locations</a>
+    </div>
+  </div>
+
+  <h1>Current reads/past reads</h1>
+  <p>Currently reading</p>
+  <div class="currently-reading-grid">
+    <div class="book-hover-reveal book-dolly">
+      <img src="images/dolly.jpg" alt="Dolly cover">
+      <div class="hover-info">
+        <h2>Everything I Know About Love</h2>
+        <p>By Dolly Alderton</p>
+        <p>Memoir</p>
+        <p>Current rating: TBD</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-bigswiss">
+      <img src="images/big swiss.jpg" alt="Big Swiss cover">
+      <div class="hover-info">
+        <h2>Big Swiss</h2>
+        <p>By Jen Beagin</p>
+        <p>Dark comedy / Literary fiction</p>
+        <p>Current rating: TBD</p>
+      </div>
+    </div>
+  </div>
+  <p>Books recently read</p>
+  <div class="books-grid">
+    <div class="book-hover-reveal book-scythe">
+      <img src="images/scythe.jpg" alt="Scythe cover">
+      <div class="hover-info">
+        <h2>Scythe</h2>
+        <p>By Neal Shusterman</p>
+        <p>Dystopian Y/A novel</p>
+        <p>Average group rating: 10</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-nightbitch">
+      <img src="images/nightbitch.jpg" alt="Nightbitch cover">
+      <div class="hover-info">
+        <h2>Nightbitch</h2>
+        <p>By Rachel Yoder</p>
+        <p>Surreal feminist horror</p>
+        <p>Average group rating: 6</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-housemaid">
+      <img src="images/housemaid.jpg" alt="The Housemaid cover">
+      <div class="hover-info">
+        <h2>The Housemaid</h2>
+        <p>By Freida McFadden</p>
+        <p>Psychological thriller</p>
+        <p>Average group rating: 6.75</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-guestlist">
+      <img src="images/guestlist.jpg" alt="The Guest List cover">
+      <div class="hover-info">
+        <h2>The Guest List</h2>
+        <p>By Lucy Foley</p>
+        <p>Mystery/Thriller</p>
+        <p>Average group rating: 5.33</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-eileen">
+      <img src="images/eileen.jpg" alt="Eileen cover">
+      <div class="hover-info">
+        <h2>Eileen</h2>
+        <p>By Ottessa Moshfegh</p>
+        <p>Psychological fiction</p>
+        <p>Average group rating: 6</p>
+      </div>
+    </div>
+
+    <div class="book-hover-reveal book-weddingpeople">
+      <img src="images/weddingpeople.jpg" alt="The People on Platform 5 cover">
+      <div class="hover-info">
+        <h2>The Wedding People</h2>
+        <p>By Alison Espach</p>
+        <p>Contemporary fiction</p>
+        <p>Average group rating: 7.4</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

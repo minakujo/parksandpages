@@ -1,0 +1,387 @@
+.topnav {
+  width: 100%;
+  background-color: #e4c4dc;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #d78792;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1002;
+  padding: 0 20px;
+}
+
+.topnav a {
+  color: #d78792;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.topnav a:hover {
+  color: #a3545d;
+}
+
+body {
+  background-color: #e4c4dc;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 25px;
+  color: #f666a298;
+  line-height: 1;
+  height: 100vh;
+  margin: 0;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 150px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+h1 {
+  font-size: 85px;
+  margin-top: -120px;
+  margin-bottom: 20px;
+  color: #f978ad4f;
+  font-family: 'Darumadrop One', cursive;
+}
+.header-image {
+  max-width: 550px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(255, 123, 215, 0.704));
+}
+.hamburger {
+  font-size: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d78792;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #ffe7fd;
+  border-right: 2px solid #d78792;
+  padding: 80px 20px 20px;
+  border-radius: 0;
+  transition: left 0.4s ease;
+  z-index: 1000;
+}
+
+.menu.open {
+  left: 0;
+}
+
+.menu a {
+  display: block;
+  background-color: transparent;
+  color: #d78792;
+  text-decoration: none;
+  margin: 10px 0;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+  font-family: 'Caveat', cursive;
+}
+
+
+.menu a:hover {
+  color: #a3545d;
+  background-color: transparent;
+  box-shadow: none;
+}
+.hamburger-icon {
+  width: 56px;
+  height: auto;
+}
+.hamburger:hover {
+  background-color: rgba(215, 135, 146, 0.235);
+  border-radius: 8px;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+  .join-page h1 {
+    margin-top: -50px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 900px) {
+  .topnav {
+    display: none;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.join-page {
+  background-color: #e4c4dc;
+  color: #f666a298;
+  font-size: 20px;
+  font-family: 'Darumadrop One', cursive;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.join-page p {
+  margin-top: 60px;
+  margin-bottom: -20px;
+  line-height: 1;
+  font-family: 'Itim', cursive;
+  font-size: 25px;
+}
+
+.join-code-image {
+  display: block;
+  margin: 40px auto 0 auto;
+  max-width: 350px;
+  width: 90%;
+  border-radius: 20px;
+  filter: drop-shadow(0 4px 10px rgba(82, 22, 69, 0.39));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.join-code-image:hover {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+  cursor: pointer;
+}
+
+.join-code-button {
+  background-color: #e4c4dc;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Fredoka', sans-serif;
+  margin-top: 20px;
+}
+.join-code-button:hover {
+color: #6a354d;
+}
+
+@media (min-width: 901px) {
+  .join-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* Move header and paragraph down on the books page */
+.books-page h1 {
+  margin-top: -60px;
+}
+
+.books-page p {
+  margin-top: 50px;
+}
+
+.books-page p,
+.locations-page p,
+.join-page p {
+  font-family: 'Itim', cursive;
+}
+.locations-page h1 {
+  margin-top: -20px;
+}
+
+.locations-page p {
+  margin-top: 30px;
+}
+
+/* Simple hover-reveal effect for books */
+.book-hover-reveal {
+  position: relative;
+  width: 250px;
+  margin: 0;
+}
+
+.book-hover-reveal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.book-hover-reveal .hover-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+.book-hover-reveal:hover .hover-info {
+  opacity: 1;
+  padding: 10px;
+}
+.books-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* Grid placement for books in books-grid */
+.books-grid .book-scythe {
+  grid-column: 3;
+  grid-row: 2;
+  margin: 0;
+}
+
+.books-grid .book-nightbitch {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+
+.books-grid .book-housemaid {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+}
+
+.books-grid .book-guestlist {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0;
+}
+
+.books-grid .book-eileen {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.books-grid .book-weddingpeople {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+}
+
+.books-grid .book-bench,
+.books-grid .book-paris {
+  margin: 0 auto;
+}
+.book-hover-reveal {
+  min-height: 400px;
+}
+.books-grid .book-weddingpeople .hover-info {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.books-grid .book-weddingpeople .hover-info h2 {
+  font-size: 22px;
+}
+
+/* Currently Reading Two-Book Grid */
+.currently-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.currently-reading-grid .book-bigswiss {
+  grid-column: 2;
+}
+
+.currently-reading-grid .book-dolly {
+  grid-column: 1;
+}
+
+.book-hover-reveal .hover-info {
+  background-image: url("images/paper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  font-size: 12pt;
+}
+
+.book-hover-reveal .hover-info * {
+  font-family: "Times New Roman", Times, serif;
+}
+.book-hover-reveal .hover-info h2 {
+  font-weight: normal;
+  font-size: 12pt;
+}
+.books-grid .book-weddingpeople .hover-info {
+  font-size: 12pt !important;
+  padding: 10px;
+}
+.books-grid .book-weddingpeople .hover-info h2 {
+  font-size: 12pt !important;
+}
+.book-image img {
+  width: 200px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.book-image img:hover {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+  cursor: pointer;
+}
