@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.toggle('open');
     });
   }
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && menu) {
-      menu.style.display = 'none';
-    }
-  });
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && menu) {
+    menu.classList.remove('open');
+  }
+});
 
   const joinImage = document.querySelector('.join-code-image');
   if (joinImage) {
@@ -24,4 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'https://bookclubs.com/parks-pages-covers-coffee/join/'; // replace with your target URL
     });
   }
+});
+document.querySelectorAll('.book-hover-reveal').forEach(book => {
+  book.addEventListener('click', () => {
+    // On mobile, toggle flip
+    if (window.innerWidth <= 768) {
+      book.classList.toggle('flipped');
+      const info = book.querySelector('.hover-info');
+      if (info) {
+        info.classList.toggle('active');
+      }
+    }
+  });
 });
