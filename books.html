@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- ===== HEAD (metadata, fonts, styles) ===== -->
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
@@ -9,6 +10,28 @@
   <title>Books - Parks & Pages</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Make the current book card the same width as one grid column */
+    .current-book {
+      margin: 20px 0;
+    }
+    .current-book .book-hover-reveal {
+      width: 100%;
+      max-width: calc((100% - 40px) / 3); /* 3 columns, 20px gap */
+      margin: 0 auto;
+    }
+    
+    /* Match responsive breakpoints of .books-grid */
+    @media (max-width: 768px) {
+      .current-book .book-hover-reveal {
+        max-width: calc((100% - 20px) / 2); /* 2 columns, 20px gap */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .current-book .book-hover-reveal {
+        max-width: 100%; /* single column on very small screens */
+      }
+    }
     .book-hover-reveal {
       position: relative;
       width: 100%;
@@ -46,14 +69,18 @@
       gap: 20px;
       margin-top: 20px;
     }
-    .currently-reading-grid,
-    .books-grid {
+    .currently-reading-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       align-items: start;
     }
 
+    @media (max-width: 768px) {
+      .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
     .book-hover-reveal {
       width: 100%;
       aspect-ratio: 2 / 3;
@@ -61,12 +88,14 @@
   </style>
 </head>
 <body class="books-page">
+  <!-- ===== TOP NAVIGATION ===== -->
   <div class="topnav">
   <a href="index.html">Home</a>
   <a href="join.html">Join</a>
   <a href="books.html">Books</a>
   <a href="locations.html">Locations</a>
 </div>
+  <!-- ===== HAMBURGER MENU ===== -->
   <div class="hamburger-menu">
     <button class="hamburger">
       <img src="images/borger.png" alt="Menu" class="hamburger-icon">
@@ -79,31 +108,96 @@
     </div>
   </div>
 
+  <!-- ===== PAGE HEADER ===== -->
   <h1>Current reads/past reads</h1>
-  <p>Currently reading</p>
-  <div class="currently-reading-grid">
-    <div class="book-hover-reveal book-dolly">
-      <img src="images/dolly.jpg" alt="Dolly cover">
+  <!-- ===== CURRENT BOOK (Now Reading) ===== -->
+   <p>Currently reading</p>
+  <div class="current-book">
+    <div class="book-hover-reveal book-hailmary">
+      <img src="images/hailmary.jpg" alt="Project Hail Mary cover">
       <div class="hover-info">
-        <h2>Everything I Know About Love</h2>
-        <p>By Dolly Alderton</p>
-        <p>Memoir</p>
-        <p>Current rating: TBD</p>
+        <h2>Project Hail Mary</h2>
+        <p>By Andy Weir</p>
+        <p>Science Fiction</p>
+        <p>Currently reading</p>
       </div>
     </div>
+  </div>
+  <!-- ===== BOOKS GRID (Past Reads) ===== -->
+  <p>Books recently read</p>
+  <div class="books-grid">
 
+    <!-- Book: Big Swiss -->
     <div class="book-hover-reveal book-bigswiss">
       <img src="images/big swiss.jpg" alt="Big Swiss cover">
       <div class="hover-info">
         <h2>Big Swiss</h2>
         <p>By Jen Beagin</p>
         <p>Dark comedy / Literary fiction</p>
-        <p>Current rating: TBD</p>
+        <p>Current rating: 6.67</p>
       </div>
     </div>
-  </div>
-  <p>Books recently read</p>
-  <div class="books-grid">
+    <!-- Book: Dolly -->
+    <div class="book-hover-reveal book-dolly">
+      <img src="images/dolly.jpg" alt="Dolly cover">
+      <div class="hover-info">
+        <h2>Everything I Know About Love</h2>
+        <p>By Dolly Alderton</p>
+        <p>Memoir</p>
+        <p>Current rating: 7</p>
+      </div>
+    </div>
+    <!-- Book: The Wedding People -->
+    <div class="book-hover-reveal book-weddingpeople">
+      <img src="images/weddingpeople.jpg" alt="The People on Platform 5 cover">
+      <div class="hover-info">
+        <h2>The Wedding People</h2>
+        <p>By Alison Espach</p>
+        <p>Contemporary fiction</p>
+        <p>Average group rating: 7.4</p>
+      </div>
+    </div>
+    <!-- Book: Eileen -->
+    <div class="book-hover-reveal book-eileen">
+      <img src="images/eileen.jpg" alt="Eileen cover">
+      <div class="hover-info">
+        <h2>Eileen</h2>
+        <p>By Ottessa Moshfegh</p>
+        <p>Psychological fiction</p>
+        <p>Average group rating: 6</p>
+      </div>
+    </div>
+    <!-- Book: The Guest List -->
+    <div class="book-hover-reveal book-guestlist">
+      <img src="images/guestlist.jpg" alt="The Guest List cover">
+      <div class="hover-info">
+        <h2>The Guest List</h2>
+        <p>By Lucy Foley</p>
+        <p>Mystery/Thriller</p>
+        <p>Average group rating: 5.33</p>
+      </div>
+    </div>
+    <!-- Book: The Housemaid -->
+    <div class="book-hover-reveal book-housemaid">
+      <img src="images/housemaid.jpg" alt="The Housemaid cover">
+      <div class="hover-info">
+        <h2>The Housemaid</h2>
+        <p>By Freida McFadden</p>
+        <p>Psychological thriller</p>
+        <p>Average group rating: 6.75</p>
+      </div>
+    </div>
+    <!-- Book: Nightbitch -->
+    <div class="book-hover-reveal book-nightbitch">
+      <img src="images/nightbitch.jpg" alt="Nightbitch cover">
+      <div class="hover-info">
+        <h2>Nightbitch</h2>
+        <p>By Rachel Yoder</p>
+        <p>Surreal feminist horror</p>
+        <p>Average group rating: 6</p>
+      </div>
+    </div>
+    <!-- Book: Scythe -->
     <div class="book-hover-reveal book-scythe">
       <img src="images/scythe.jpg" alt="Scythe cover">
       <div class="hover-info">
@@ -114,57 +208,8 @@
       </div>
     </div>
 
-    <div class="book-hover-reveal book-nightbitch">
-      <img src="images/nightbitch.jpg" alt="Nightbitch cover">
-      <div class="hover-info">
-        <h2>Nightbitch</h2>
-        <p>By Rachel Yoder</p>
-        <p>Surreal feminist horror</p>
-        <p>Average group rating: 6</p>
-      </div>
-    </div>
-
-    <div class="book-hover-reveal book-housemaid">
-      <img src="images/housemaid.jpg" alt="The Housemaid cover">
-      <div class="hover-info">
-        <h2>The Housemaid</h2>
-        <p>By Freida McFadden</p>
-        <p>Psychological thriller</p>
-        <p>Average group rating: 6.75</p>
-      </div>
-    </div>
-
-    <div class="book-hover-reveal book-guestlist">
-      <img src="images/guestlist.jpg" alt="The Guest List cover">
-      <div class="hover-info">
-        <h2>The Guest List</h2>
-        <p>By Lucy Foley</p>
-        <p>Mystery/<p>
-          <p>Thriller</p>
-        <p>Average group rating: 5.33</p>
-      </div>
-    </div>
-
-    <div class="book-hover-reveal book-eileen">
-      <img src="images/eileen.jpg" alt="Eileen cover">
-      <div class="hover-info">
-        <h2>Eileen</h2>
-        <p>By Ottessa Moshfegh</p>
-        <p>Psychological fiction</p>
-        <p>Average group rating: 6</p>
-      </div>
-    </div>
-
-    <div class="book-hover-reveal book-weddingpeople">
-      <img src="images/weddingpeople.jpg" alt="The People on Platform 5 cover">
-      <div class="hover-info">
-        <h2>The Wedding People</h2>
-        <p>By Alison Espach</p>
-        <p>Contemporary fiction</p>
-        <p>Average group rating: 7.4</p>
-      </div>
-    </div>
   </div>
+  <!-- ===== SCRIPTS ===== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hamburger = document.querySelector('.hamburger');

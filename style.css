@@ -1,3 +1,4 @@
+/* --- NAVIGATION --- */
 .topnav {
   width: 100%;
   background-color: #e4c4dc;
@@ -31,35 +32,6 @@
   color: #a3545d;
 }
 
-body {
-  background-color: #e4c4dc;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 25px;
-  color: #f666a298;
-  line-height: 1;
-  height: 100vh;
-  margin: 0;
-  margin-top: 0;
-  text-align: center;
-  padding-top: 150px;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-}
-h1 {
-  font-size: 85px;
-  margin-top: -120px;
-  margin-bottom: 20px;
-  color: #f978ad4f;
-  font-family: 'Darumadrop One', cursive;
-}
-.header-image {
-  max-width: 550px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 4px 10px rgba(255, 123, 215, 0.704));
-}
 .hamburger {
   font-size: 36px;
   background: none;
@@ -73,7 +45,22 @@ h1 {
   display: none;
   width: 56px;
   height: 56px;
-  display: none;
+}
+
+.hamburger-icon {
+  width: 56px;
+  height: auto;
+  display: block;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.hamburger:hover {
+  background-color: rgba(215, 135, 146, 0.235);
+  border-radius: 8px;
+  width: 56px;
+  height: 56px;
+  top: 12;
 }
 
 .menu {
@@ -107,37 +94,47 @@ h1 {
   font-family: 'Caveat', cursive;
 }
 
-
 .menu a:hover {
   color: #a3545d;
   background-color: transparent;
-  box-shadow: none;
 }
-.hamburger-icon {
-  width: 56px;
+
+/* --- GLOBAL --- */
+body {
+  background-color: #e4c4dc;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 25px;
+  color: #f666a298;
+  line-height: 1;
+  height: 100vh;
+  margin: 0;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 150px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+h1 {
+  font-size: 85px;
+  margin-top: -120px;
+  margin-bottom: 20px;
+  color: #f978ad4f;
+  font-family: 'Darumadrop One', cursive;
+}
+
+.header-image {
+  max-width: 550px;
   height: auto;
   display: block;
-  margin: auto;
-  margin-top: -8px;
-}
-.hamburger:hover {
-  background-color: rgba(215, 135, 146, 0.235);
-  border-radius: 8px;
-  width: 56px;
-  height: 56px;
-  top: 12;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(255, 123, 215, 0.704));
 }
 
-/* .hamburger is hidden by default, shown in media query below */
+/* --- PAGES --- */
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
+/* Join Page */
 .join-page {
   background-color: #e4c4dc;
   color: #f666a298;
@@ -163,7 +160,6 @@ h1 {
   max-width: 350px;
   width: 90%;
   border-radius: 20px;
-  filter: drop-shadow(0 4px 10px rgba(82, 22, 69, 0.39));
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   transition: filter 0.3s ease;
 }
@@ -184,19 +180,12 @@ h1 {
   font-family: 'Fredoka', sans-serif;
   margin-top: 20px;
 }
+
 .join-code-button:hover {
-color: #6a354d;
+  color: #6a354d;
 }
 
-@media (min-width: 901px) {
-  .join-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-/* Move header and paragraph down on the books page */
+/* Books Page */
 .books-page h1 {
   margin-top: -80px;
 }
@@ -207,21 +196,35 @@ color: #6a354d;
 
 .books-page p,
 .join-page p {
-  
   font-family: 'Itim', cursive;
 }
-.book-bench img,
-.book-paris img {
-  max-width: 200px;  /* smaller max width */
-  width: 80%;        /* smaller relative width */
+
+/* Locations Page */
+.locations-page h1 {
+  margin-top: -20px;
 }
 
-/* Simple hover-reveal effect for books */
-/* --- BOOK HOVER REVEAL --- */
+.locations-page p {
+  margin-top: 30px;
+  font-family: 'Itim';
+}
+
+/* --- COMPONENTS --- */
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Book hover reveal */
 .book-hover-reveal {
   width: 300px;
   max-width: 100%;
   margin: 20px auto;
+  position: relative;
 }
 
 .book-hover-reveal img {
@@ -253,6 +256,13 @@ color: #6a354d;
   padding: 20px;
   box-sizing: border-box;
   line-height: 1.1;
+  background-image: url("images/paper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  font-size: clamp(10px, 2vw, 12pt);
+  word-break: break-word;
 }
 
 .book-hover-reveal .hover-info.active {
@@ -264,6 +274,22 @@ color: #6a354d;
   opacity: 1;
   padding: 10px;
 }
+
+.book-hover-reveal .hover-info * {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.book-hover-reveal .hover-info h2 {
+  font-weight: normal;
+  font-size: 12pt;
+}
+
+.book-hover-reveal .hover-info p {
+  margin: 4px 0;
+  font-size: 9px;
+}
+
+/* Books grid */
 .books-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -272,44 +298,7 @@ color: #6a354d;
   justify-items: center;
 }
 
-/* Grid placement for books in books-grid */
-.books-grid .book-scythe {
-  grid-column: 3;
-  grid-row: 2;
-  margin: 0;
-}
-
-.books-grid .book-nightbitch {
-  grid-column: 2;
-  grid-row: 2;
-  margin: 0;
-}
-
-.books-grid .book-housemaid {
-  grid-column: 1;
-  grid-row: 2;
-  margin: 0;
-}
-
-.books-grid .book-guestlist {
-  grid-column: 3;
-  grid-row: 1;
-  margin: 0;
-}
-
-.books-grid .book-eileen {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-}
-
-.books-grid .book-weddingpeople {
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-}
-
-/* --- CURRENTLY READING GRID --- */
+/* Currently reading grid */
 .currently-reading-grid {
   display: flex;
   justify-content: flex-start;
@@ -322,53 +311,41 @@ color: #6a354d;
   margin: 20px auto;
 }
 
-@media (min-width: 1200px) {
-  .currently-reading-grid {
-    margin-left: 360px;
-  }
-}
 .currently-reading-grid .book-hover-reveal {
   flex: 0 1 300px;
 }
 
-.book-hover-reveal .hover-info {
-  background-image: url("images/paper.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  font-family: "Times New Roman", Times, serif;
-  color: black;
-  font-size: clamp(10px, 2vw, 12pt);
-  word-break: break-word;
-}
-
-.book-hover-reveal .hover-info * {
-  font-family: "Times New Roman", Times, serif;
-}
-.book-hover-reveal .hover-info h2 {
-  font-weight: normal;
-  font-size: 12pt;
-}
-
-.book-image img:hover {
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
-  cursor: pointer;
-}
-
-.book-bench,.book-paris {
+/* Book bench and Paris */
+.book-bench,
+.book-paris {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.locations-page h1 {
-  margin-top: -20px;
+
+.book-bench img,
+.book-paris img {
+  max-width: 200px;  /* smaller max width */
+  width: 80%;        /* smaller relative width */
 }
 
-.locations-page p {
-  margin-top: 30px;
-  font-family: 'Itim'
+.book-bench img:hover,
+.book-paris img:hover {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+  cursor: pointer;
 }
+
+/* Location grid */
+.location-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+/* --- MEDIA QUERIES: max-width 768px --- */
 @media (max-width: 768px) {
   .topnav {
     display: none !important;
@@ -379,7 +356,6 @@ color: #6a354d;
     height: 30px;
     margin: 0;
     padding: 0;
-}
   }
   .book-hover-reveal .hover-info {
     font-size: 10px;
@@ -388,7 +364,6 @@ color: #6a354d;
   .book-hover-reveal .hover-info h2 {
     font-size: 11px;
   }
-@media (max-width: 768px) {
   .currently-reading-grid {
     display: flex;
     flex-wrap: wrap;
@@ -402,33 +377,11 @@ color: #6a354d;
     margin: 0 auto;
     margin-left: 60px;
   }
-
   .currently-reading-grid .book-hover-reveal {
     flex: 0 1 90%;
     max-width: 300px;
     margin: 0 auto;
   }
-}
-@media (min-width: 901px) {
-  .books-grid .book-hover-reveal {
-    width: 250px;
-    max-width: 250px;
-    margin: 40px;
-  }
-}
-/* --- LOCATION GRID --- */
-.location-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
-  margin-top: 60px;
-}
-.book-hover-reveal .hover-info p {
-  margin: 4px 0;
-}
-@media (max-width: 768px) {
   .books-page h1 {
     font-size: 40px;
     text-align: center;
@@ -436,8 +389,6 @@ color: #6a354d;
     margin-left: 0;
     margin-right: 0;
   }
-}
-@media (max-width: 768px) {
   .header-image {
     max-width: 90%;
     height: auto;
@@ -447,20 +398,16 @@ color: #6a354d;
   body p {
     font-size: 16px;
   }
-}
-@media (max-width: 768px) {
   .join-page {
     padding: 20px;
     padding-top: 60px;
     height: auto;
     text-align: center;
   }
-
   .join-page h1 {
     font-size: 40px;
     margin-top: 30px;
   }
-
   .join-page p {
     font-size: 18px;
     margin-top: 30px;
@@ -468,12 +415,10 @@ color: #6a354d;
     line-height: 1.3;
     padding: 0 10px;
   }
-
   .join-code-image {
     max-width: 70%;
     margin-top: 40px;
   }
-
   .join-code-button {
     font-size: 16px;
     padding: 10px 20px;
@@ -485,12 +430,10 @@ color: #6a354d;
     height: auto;
     text-align: center;
   }
-
   .locations-page h1 {
     font-size: 40px;
     margin-top: -10px;
   }
-
   .locations-page p {
     font-size: 18px;
     margin-top: 30px;
@@ -498,6 +441,18 @@ color: #6a354d;
     line-height: 1.3;
   }
 }
-.book-hover-reveal .hover-info p {
-  font-size: 9px;
+
+/* --- MEDIA QUERIES: min-width 901px --- */
+@media (min-width: 901px) {
+  .join-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .books-grid .book-hover-reveal {
+    width: 250px;
+    max-width: 250px;
+    margin: 40px;
+  }
 }
